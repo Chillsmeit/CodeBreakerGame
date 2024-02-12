@@ -1,6 +1,6 @@
-package io.codeforall.gameJam.grid;
+package io.codeforall.gameJam;
 
-import io.codeforall.gameJam.grid.gfx.SimpleGfxGrid;
+import io.codeforall.gameJam.gfx.SimpleGfxGrid;
 
 /**
  * A factory of different types of grids

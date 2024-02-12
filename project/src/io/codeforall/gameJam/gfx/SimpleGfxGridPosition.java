@@ -1,7 +1,7 @@
-package io.codeforall.gameJam.grid.gfx;
+package io.codeforall.gameJam.gfx;
 
-import io.codeforall.gameJam.grid.position.AbstractGridPosition;
-import io.codeforall.gameJam.grid.position.GridPosition;
+import io.codeforall.gameJam.position.AbstractGridPosition;
+import io.codeforall.gameJam.position.GridPosition;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 public class SimpleGfxGridPosition extends AbstractGridPosition {

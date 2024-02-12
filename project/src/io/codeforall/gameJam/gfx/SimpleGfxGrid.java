@@ -1,7 +1,7 @@
-package io.codeforall.gameJam.grid.gfx;
+package io.codeforall.gameJam.gfx;
 
-import io.codeforall.gameJam.grid.Grid;
-import io.codeforall.gameJam.grid.position.GridPosition;
+import io.codeforall.gameJam.Grid;
+import io.codeforall.gameJam.position.GridPosition;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
@@ -25,7 +25,7 @@ public class SimpleGfxGrid implements Grid {
     @Override
     public void init() {
         rectangle.setColor(Color.BLACK);
-        rectangle.draw();
+        //rectangle.draw();
     }
 
     /**

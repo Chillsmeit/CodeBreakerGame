@@ -1,4 +1,4 @@
-package io.codeforall.gameJam.grid.position;
+package io.codeforall.gameJam.position;
 
 /**
  * A position on the grid that is capable of moving around

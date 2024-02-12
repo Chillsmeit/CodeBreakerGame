@@ -1,6 +1,6 @@
-package io.codeforall.gameJam.grid;
+package io.codeforall.gameJam;
 
-import io.codeforall.gameJam.grid.position.GridPosition;
+import io.codeforall.gameJam.position.GridPosition;
 
 public interface Grid {
 

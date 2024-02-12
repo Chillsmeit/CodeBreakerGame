@@ -1,6 +1,6 @@
-package io.codeforall.gameJam.grid.position;
+package io.codeforall.gameJam.position;
 
-import io.codeforall.gameJam.grid.Grid;
+import io.codeforall.gameJam.Grid;
 
 public abstract class AbstractGridPosition implements GridPosition {
 
