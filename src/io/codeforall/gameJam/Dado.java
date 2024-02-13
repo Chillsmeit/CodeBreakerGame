@@ -9,8 +9,11 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Dado implements MouseHandler {
 
     private Picture dado;
+    private Game game;
+    int col = 150;
+    int row = 650;
 
-    public Dado (int col, int row, String pathToImage) {
+    public Dado(String pathToImage) {
         dado = new Picture(col, row, pathToImage);
     }
 
@@ -31,11 +34,13 @@ public class Dado implements MouseHandler {
     public void mouseClicked(MouseEvent mouseEvent) {
 
         if (mouseEvent.getX() >= dado.getX() &&
-        mouseEvent.getX() <= dado.getX() + dado.getWidth() &&
-        mouseEvent.getY() >= dado.getY() &&
-        mouseEvent.getY() <= dado.getY() + dado.getHeight()) {
-            int numRandom = (int) Math.floor(Math.random() * 6);
+                mouseEvent.getX() <= dado.getX() + dado.getWidth() &&
+                mouseEvent.getY() >= dado.getY() &&
+                mouseEvent.getY() <= dado.getY() + dado.getHeight()) {
+            int numRandom = (int) Math.ceil(Math.random() * 6);
             System.out.println(numRandom);
+
+            .movePlayer(numRandom);
         }
     }
 

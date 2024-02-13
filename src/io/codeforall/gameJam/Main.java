@@ -1,17 +1,22 @@
 package io.codeforall.gameJam;
 
-
-import org.academiadecodigo.simplegraphics.pictures.Picture;
-
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
 
-        Game game = new Game(10, 700);
+        Background background = new Background(10, 50, Utilities.PREFIX+"tabuleiro.jpg");
+        background.drawBackground();
+
+        Game game = new Game();
         game.init();
 
-        Players player = new Players(new Picture(200,200,"resources/pawn.png"));
-        player.draw();
+        //Player player = new Player(800, 800,Utilities.PREFIX +"pawn.png");
+        //player.drawPlayer();
+
+        //Dado dado = new Dado(Utilities.PREFIX + "dice_1.png");
+        //dado.drawDado();
+
     }
+
 
 }

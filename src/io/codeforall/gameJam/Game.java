@@ -2,17 +2,19 @@ package io.codeforall.gameJam;
 
 public class Game {
 
-    private Grid grid;
-    private Background background;
+    private Dado dado;
+    private Player player;
 
-    public Game (int cols, int rows) {
-        grid = GridFactory.makeGrid(cols, rows);
-        background = new Background(cols, rows, Utilities.PREFIX + "tabuleiro.jpg");
+    public Game () {
+        dado = new Dado(Utilities.PREFIX+"dice_1.png");
+        player = new Player(800, 800, Utilities.PREFIX+"pawn.png");
     }
 
     public void init() {
-        grid.init();
-        background.drawBackground();
+        dado.drawDado();
+        player.drawPlayer();
     }
+
+
 
 }
