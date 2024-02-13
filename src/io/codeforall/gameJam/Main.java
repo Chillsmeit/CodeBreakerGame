@@ -3,13 +3,10 @@ package io.codeforall.gameJam;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        //Game game = new Game(35, 40, 100);
-        Background background = new Background(Utilities.PREFIX+"batman.png");
-        background.drawBackground();
-        //game.init();
-        //game.start();
+        Game game = new Game(35, 40);
+        game.init();
 
     }
 

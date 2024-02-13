@@ -1,6 +1,8 @@
 package io.codeforall.gameJam.gfx;
 
+import io.codeforall.gameJam.Background;
 import io.codeforall.gameJam.Grid;
+import io.codeforall.gameJam.Utilities;
 import io.codeforall.gameJam.position.GridPosition;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;

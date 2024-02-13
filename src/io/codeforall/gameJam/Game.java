@@ -3,21 +3,16 @@ package io.codeforall.gameJam;
 public class Game {
 
     private Grid grid;
-    private int delay;
+    private Background background;
 
-    public Game (int cols, int rows, int delay) {
+    public Game (int cols, int rows) {
         grid = GridFactory.makeGrid(cols, rows);
-        this.delay = delay;
+        background = new Background(cols, rows, Utilities.PREFIX + "tabuleiro.jpg");
     }
 
     public void init() {
         grid.init();
-    }
-
-    public void start() throws InterruptedException {
-        while (true) {
-            Thread.sleep(delay);
-        }
+        background.drawBackground();
     }
 
 }
