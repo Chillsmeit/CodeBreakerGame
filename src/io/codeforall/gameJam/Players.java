@@ -1,4 +1,4 @@
-package io.codeforall.gameJam.position;
+package io.codeforall.gameJam;
 
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 

@@ -1,7 +1,6 @@
 package io.codeforall.gameJam;
 
 
-import io.codeforall.gameJam.position.Players;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Main {
