@@ -27,7 +27,6 @@ public class SimpleGfxGrid implements Grid {
     @Override
     public void init() {
         rectangle.setColor(Color.BLACK);
-        //rectangle.draw();
     }
 
     /**
