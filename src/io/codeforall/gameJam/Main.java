@@ -8,7 +8,10 @@ public class Main {
         background.drawBackground();
 
         Game game = new Game();
-        game.init();
+
+        Dado dado = new Dado(Utilities.PREFIX + "dice_1.png");
+        dado.drawDado();
+
 
         //Player player = new Player(800, 800,Utilities.PREFIX +"pawn.png");
         //player.drawPlayer();

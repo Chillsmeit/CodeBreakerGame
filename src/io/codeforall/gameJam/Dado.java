@@ -9,7 +9,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Dado implements MouseHandler {
 
     private Picture dado;
-    private Game game;
+    private Game game = new Game();
     int col = 150;
     int row = 650;
 
@@ -40,7 +40,7 @@ public class Dado implements MouseHandler {
             int numRandom = (int) Math.ceil(Math.random() * 6);
             System.out.println(numRandom);
 
-            .movePlayer(numRandom);
+            game.movePlayer(numRandom);
         }
     }
 

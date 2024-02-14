@@ -17,7 +17,11 @@ public class Player {
     }
 
     public void moveLeft() {
-        player.translate(-10, 0);
+        player.translate(-30, 0);
+    }
+
+    public void removePlayer() {
+        player.delete();
     }
 
     public void moveUp() {
@@ -28,16 +32,8 @@ public class Player {
         player.translate(0,10);
     }
 
-    public void movePlayer(int numSteps) {
-        for (int i = 0; i < numSteps; i++) {
-            moveLeft();
-            drawPlayer();
-
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
+    public void refreshImage() {
+        player.load(Utilities.PREFIX + "pawn.png");
     }
+
 }
