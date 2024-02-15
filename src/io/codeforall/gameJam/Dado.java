@@ -6,15 +6,19 @@ import org.academiadecodigo.simplegraphics.mouse.MouseEventType;
 import org.academiadecodigo.simplegraphics.mouse.MouseHandler;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
-public class Dado implements MouseHandler {
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
+public class Dado implements MouseHandler {
+    private final ExecutorService executorService;
     private Picture dado;
     private Game game = new Game();
-    int col = 150;
-    int row = 650;
+    int col = 250;
+    int row = 700;
 
     public Dado(String pathToImage) {
         dado = new Picture(col, row, pathToImage);
+        executorService = Executors.newFixedThreadPool(1);
     }
 
     public void drawDado() {
@@ -32,16 +36,18 @@ public class Dado implements MouseHandler {
 
     @Override
     public void mouseClicked(MouseEvent mouseEvent) {
+        Runnable runnable;
+        executorService.execute(() -> {
+            if (mouseEvent.getX() >= dado.getX() &&
+                    mouseEvent.getX() <= dado.getX() + dado.getWidth() &&
+                    mouseEvent.getY() >= dado.getY() &&
+                    mouseEvent.getY() <= dado.getY() + dado.getHeight()) {
+                int numRandom = (int) Math.ceil(Math.random() * 6);
+                System.out.println(numRandom);
 
-        if (mouseEvent.getX() >= dado.getX() &&
-                mouseEvent.getX() <= dado.getX() + dado.getWidth() &&
-                mouseEvent.getY() >= dado.getY() &&
-                mouseEvent.getY() <= dado.getY() + dado.getHeight()) {
-            int numRandom = (int) Math.ceil(Math.random() * 6);
-            System.out.println(numRandom);
-
-            game.movePlayer(numRandom);
-        }
+                game.movePlayer(1);
+            }
+        });
     }
 
     @Override
