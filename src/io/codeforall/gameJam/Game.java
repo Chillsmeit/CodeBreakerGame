@@ -15,23 +15,25 @@ public class Game {
 
     public void init() {
         player.drawPlayer();
+        player.yourTurn();
     }
 
     public void movePlayer(int numSteps) {
-        Runnable runnable;
-        executorService.execute(() -> {
-            for (int i = 0; i < numSteps; i++) {
-                player.moveLeft();
+        if (player.yourTurn()) {
+            Runnable runnable;
+            executorService.execute(() -> {
+                for (int i = 0; i < numSteps; i++) {
+                    player.moveLeft();
 
-                try {
-                    Thread.sleep(50);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
+                    try {
+                        Thread.sleep(50);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
-            }
-        });
+                player.isTurn();
+            });
+        }
     }
-
-
 
 }

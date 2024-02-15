@@ -45,7 +45,7 @@ public class Dado implements MouseHandler {
                 int numRandom = (int) Math.ceil(Math.random() * 6);
                 System.out.println(numRandom);
 
-                game.movePlayer(1);
+                game.movePlayer(numRandom);
             }
         });
     }

@@ -7,6 +7,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Player {
     private Picture player;
     private String name;
+    private boolean turn;
 
     public Player(int col, int row,String pathToImage, String name) {
         player = new Picture(col, row, pathToImage);
@@ -25,11 +26,7 @@ public class Player {
     }
 
     public void moveLeft() {
-        player.translate(-125, 0);
-    }
-
-    public void removePlayer() {
-        player.delete();
+        player.translate(-70, 0);
     }
 
     public void moveUp() {
@@ -42,6 +39,14 @@ public class Player {
 
     public void refreshImage() {
         player.load(Utilities.PREFIX + "pawn.png");
+    }
+
+    public boolean yourTurn() {
+        return turn = true;
+    }
+
+    public void isTurn() {
+        turn = false;
     }
 
     public String getName() {
