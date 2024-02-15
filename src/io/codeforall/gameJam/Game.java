@@ -1,20 +1,39 @@
 package io.codeforall.gameJam;
 
-public class Game {
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
-    private Dado dado;
+public class Game {
+    private final ExecutorService executorService;
     private Player player;
 
     public Game () {
-        dado = new Dado(Utilities.PREFIX+"dice_1.png");
-        player = new Player(800, 800, Utilities.PREFIX+"pawn.png");
+        executorService = Executors.newFixedThreadPool(1);
+        player = new Player(825, 870, Utilities.PREFIX+"pawn.png", "ZUKA");
+        init();
     }
 
     public void init() {
-        dado.drawDado();
         player.drawPlayer();
+        player.yourTurn();
     }
 
+    public void movePlayer(int numSteps) {
+        if (player.yourTurn()) {
+            Runnable runnable;
+            executorService.execute(() -> {
+                for (int i = 0; i < numSteps; i++) {
+                    player.moveLeft();
 
+                    try {
+                        Thread.sleep(50);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                player.isTurn();
+            });
+        }
+    }
 
 }
