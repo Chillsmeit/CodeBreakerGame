@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Background background = new Background(10, 50, Utilities.PREFIX+"rsz_2gridwip_2.png");
+        Background background = new Background(10, 10, Utilities.PREFIX+"rsz_2gridwip_2.png");
         background.drawBackground();
 
         //Game game = new Game();

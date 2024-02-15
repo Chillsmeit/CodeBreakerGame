@@ -23,17 +23,20 @@ public class Game {
             Runnable runnable;
             executorService.execute(() -> {
                 for (int i = 0; i < numSteps; i++) {
-                    player.moveLeft();
-
+                    player.movePlayer();
+                    player.setMoveCounter();
+                }
+            });
                     try {
                         Thread.sleep(50);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
                 }
-                player.isTurn();
-            });
-        }
-    }
 
-}
+                player.isTurn();
+            }
+        }
+
+
+
