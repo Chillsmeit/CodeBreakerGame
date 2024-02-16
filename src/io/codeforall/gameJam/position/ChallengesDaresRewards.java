@@ -39,14 +39,14 @@ public class ChallengesDaresRewards {
 
 
     public String getRewards() {
-        return rewards[(int)Math.random()*5];
+        return rewards[(int)Math.random()* rewards.length-1];
     }
 
     public String getChallenges() {
-        return challenges[(int)Math.random()*10];
+        return challenges[(int)Math.random()*challenges.length-1];
     }
 
     public String getPenalties() {
-        return penalties[(int)Math.random()*9];
+        return penalties[(int)Math.random()* penalties.length-1];
     }
 }
