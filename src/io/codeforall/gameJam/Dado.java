@@ -45,15 +45,17 @@ public class Dado implements MouseHandler {
                 int numRandom = (int) Math.ceil(Math.random() * 6);
                 System.out.println(numRandom);
 
-                if (numRandom == 2) {
+                if (numRandom == 1) {
+                    dado.load("resources/Dice1TOP.png");
+                } else if (numRandom == 2) {
                     dado.load("resources/Dice2TOP.png");
-                } else if (numRandom == 3) {
+                } else if (numRandom == 3)  {
                     dado.load("resources/Dice3TOP.png");
-                } else if (numRandom == 4)  {
+                } else if (numRandom == 4) {
                     dado.load("resources/Dice4TOP.png");
                 } else if (numRandom == 5) {
                     dado.load("resources/Dice5TOP.png");
-                } else if (numRandom == 6) {
+                } else {
                     dado.load("resources/Dice6TOP.png");
                 }
 
