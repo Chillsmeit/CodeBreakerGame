@@ -28,7 +28,7 @@ public class Game {
                 }
             });
             try {
-                Thread.sleep(50);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

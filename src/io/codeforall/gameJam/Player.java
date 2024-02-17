@@ -1,5 +1,6 @@
 package io.codeforall.gameJam;
 
+import io.codeforall.gameJam.position.ChallengesDaresRewards;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
@@ -8,9 +9,8 @@ public class Player {
     private Picture player;
     private String name;
     private boolean turn;
-
-
     private int moveCounter;
+    private ChallengesDaresRewards challengesDaresRewards = new ChallengesDaresRewards();
 
     public int getMoveCounter() {
         return moveCounter;
@@ -51,20 +51,59 @@ public class Player {
     }
 
     public void movePlayer() {
-        if (moveCounter>=7&&moveCounter<14){
+        String message = "";
+        if (moveCounter >= 7 && moveCounter < 14){
                 moveUp();
-        } else if (moveCounter>=14&&moveCounter<21) {
+
+                if (moveCounter == 8 || moveCounter == 11) {
+                    message = challengesDaresRewards.getChallenges();
+                } else if (moveCounter == 9 || moveCounter == 13) {
+                    message = challengesDaresRewards.getRewards();
+                } else if (moveCounter == 10 || moveCounter == 12){
+                    message = challengesDaresRewards.getPenalties();
+                } else if (moveCounter == 7) {
+                    message = challengesDaresRewards.getZuka();
+                }
+
+        } else if (moveCounter >= 14 && moveCounter < 21) {
                 moveRight();
-        } else if (moveCounter>=21&&moveCounter<28) {
+
+                if (moveCounter == 16 || moveCounter == 20) {
+                    message = challengesDaresRewards.getChallenges();
+                } else if (moveCounter == 18) {
+                    message = challengesDaresRewards.getRewards();
+                } else {
+                    message = challengesDaresRewards.getPenalties();
+                }
+        } else if (moveCounter >= 21 && moveCounter < 28) {
                 moveDown();
+
+                if (moveCounter == 23 || moveCounter == 26) {
+                    message = challengesDaresRewards.getChallenges();
+                } else if (moveCounter == 25) {
+                    message = challengesDaresRewards.getRewards();
+                } else {
+                    message = challengesDaresRewards.getPenalties();
+                }
+
         } else if (moveCounter == 28){
             moveCounter = 0;
-                moveLeft();
+            message = "Game Over!";
+                //moveLeft();
+
         } else if (moveCounter >= 0&&moveCounter < 7) {
                 moveLeft();
-        }
-    }
 
+                if(moveCounter == 2 || moveCounter == 5) {
+                    message = challengesDaresRewards.getChallenges();
+                } else if(moveCounter == 4) {
+                    message = challengesDaresRewards.getRewards();
+                } else {
+                    message = challengesDaresRewards.getPenalties();
+                }
+        }
+        System.out.println(message);
+    }
 
     public void refreshImage() {
         player.load(Utilities.PREFIX + "pawn.png");
@@ -81,5 +120,6 @@ public class Player {
     public String getName() {
         return name;
     }
+
 
 }
