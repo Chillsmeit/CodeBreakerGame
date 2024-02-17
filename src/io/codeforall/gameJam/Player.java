@@ -74,7 +74,7 @@ public class Player {
         return turn = true;
     }
 
-    public void isTurn() {
+    public void turnOf() {
         turn = false;
     }
 

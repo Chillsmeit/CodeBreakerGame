@@ -1,7 +1,4 @@
 package io.codeforall.gameJam.position;
-
-import org.academiadecodigo.simplegraphics.graphics.Text;
-
 public class ChallengesDaresRewards {
     private String[] challenges = {
       "Diz algo que ninguém sabe sobre ti",
@@ -36,7 +33,6 @@ public class ChallengesDaresRewards {
        "Escolhe alguém para receber um desafio",
        "Cria um desafio para alguém(não podes recuar casas)"
     };
-
 
     public String getRewards() {
         return rewards[(int)(Math.random()*(rewards.length-1))];
