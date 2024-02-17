@@ -7,9 +7,9 @@ public class Game {
     private final ExecutorService executorService;
     private Player player;
 
-    public Game () {
+    public Game() {
         executorService = Executors.newFixedThreadPool(1);
-        player = new Player(825, 870, Utilities.PREFIX+"pawn.png", "ZUKA");
+        player = new Player(635, 620, Utilities.PREFIX + "piece-golden (2).png", "ZUKA");
         init();
     }
 
@@ -23,17 +23,17 @@ public class Game {
             Runnable runnable;
             executorService.execute(() -> {
                 for (int i = 0; i < numSteps; i++) {
-                    player.moveLeft();
-
-                    try {
-                        Thread.sleep(50);
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
+                    player.movePlayer();
+                    player.setMoveCounter();
                 }
-                player.turnOf();
             });
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
+        player.turnOf();
     }
 
 }
