@@ -53,6 +53,7 @@ public class Player {
     public void movePlayer() {
         if (moveCounter>=7&&moveCounter<14){
                 moveUp();
+
         } else if (moveCounter>=14&&moveCounter<21) {
                 moveRight();
         } else if (moveCounter>=21&&moveCounter<28) {
