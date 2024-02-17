@@ -31,7 +31,7 @@ public class Game {
                         throw new RuntimeException(e);
                     }
                 }
-                player.isTurn();
+                player.turnOf();
             });
         }
     }
