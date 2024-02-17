@@ -4,12 +4,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Background background = new Background(10, 10, Utilities.PREFIX+"gamejam.png");
+        Background background = new Background(10, 10, Utilities.PREFIX+"board.png");
         background.drawBackground();
 
         //Game game = new Game();
 
-        Dado dado = new Dado(Utilities.PREFIX + "dice_1.png");
+        Dado dado = new Dado(Utilities.PREFIX + "Dice1TOP.png");
         dado.drawDado();
 
 

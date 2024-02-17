@@ -75,6 +75,7 @@ public class Player {
                 } else {
                     message = challengesDaresRewards.getPenalties();
                 }
+
         } else if (moveCounter >= 21 && moveCounter < 28) {
                 moveDown();
 

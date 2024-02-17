@@ -34,8 +34,8 @@ public class ChallengesDaresRewards {
        "Cria um desafio para alguém(não podes recuar casas)"
     };
 
-    private String zuka = "Dança a musica 'Lapada Dela' com o Zuka se ele não tiver presente dança sozinho";
-    private String mic = "Canta uma música da escolha do Mic se ele não estiver presente canta uma da tua escolha";
+    private String zuka = "Dança a Lapada Dela com o Zuka, se ele não tiver presente dança sozinho";
+    private String mic = "Canta uma música da escolha do Mic, se ele não estiver presente canta uma da tua escolha";
     private String mariana = "Durante as próximas cinco jogadas sempre que falares tens de dar um conselho senão bebe um copo";
 
     public String getRewards() {
