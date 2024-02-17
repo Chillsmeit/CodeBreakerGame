@@ -9,7 +9,7 @@ public class Game {
 
     public Game() {
         executorService = Executors.newFixedThreadPool(1);
-        player = new Player(635, 620, Utilities.PREFIX + "piece-golden (2).png", "ZUKA");
+        player = new Player(635, 620, Utilities.PREFIX + "player.png", "ZUKA");
         init();
     }
 
