@@ -1,5 +1,7 @@
 package io.codeforall.gameJam;
 
+import io.codeforall.gameJam.position.BoardPositions;
+import io.codeforall.gameJam.position.ChallengesDaresRewards;
 import org.academiadecodigo.simplegraphics.mouse.Mouse;
 import org.academiadecodigo.simplegraphics.mouse.MouseEvent;
 import org.academiadecodigo.simplegraphics.mouse.MouseEventType;
@@ -15,6 +17,8 @@ public class Dado implements MouseHandler {
     private Game game = new Game();
     int col = 300;
     int row = 300;
+    private BoardPositions boardPositions = new BoardPositions();
+    private ChallengesDaresRewards challengesDaresRewards = new ChallengesDaresRewards();
 
     public Dado(String pathToImage) {
         dado = new Picture(col, row, pathToImage);
@@ -46,6 +50,26 @@ public class Dado implements MouseHandler {
                 System.out.println(numRandom);
 
                 game.movePlayer(numRandom);
+                for (int i = 0; i <boardPositions.getPx().length; i++) {
+                    if (game.getPlayer().getPlayerPicture().getX()==boardPositions.getPx()[i]&&game.getPlayer().getPlayerPicture().getY()==boardPositions.getPy()[i]){
+                        int[] bx = boardPositions.getPx();
+                        int[] by = boardPositions.getPy();
+                        if ((bx[i]==bx[1]&&by[i]==by[1])||(bx[i]==bx[3]&&by[i]==by[3])||(bx[i]==bx[6]&&by[i]==by[6])||(bx[i]==bx[10]&&by[i]==by[10])||(bx[i]==bx[12]&&by[i]==by[12])||(bx[i]==bx[15]&&by[i]==by[15])||(bx[i]==bx[17]&&by[i]==by[17])||(bx[i]==bx[19]&&by[i]==by[19])||(bx[i]==bx[22]&&by[i]==by[22])||(bx[i]==bx[24]&&by[i]==by[24])||(bx[i]==bx[27]&&by[i]==by[27])){
+                            System.out.println(challengesDaresRewards.getPenalties());
+                        } else if ((bx[i]==bx[2]&&by[i]==by[2])||(bx[i]==bx[5]&&by[i]==by[5])||(bx[i]==bx[8]&&by[i]==by[8])||(bx[i]==bx[11]&&by[i]==by[11])||(bx[i]==bx[16]&&by[i]==by[16])||(bx[i]==bx[20]&&by[i]==by[20])||(bx[i]==bx[23]&&by[i]==by[23])||(bx[i]==bx[26]&&by[i]==by[26])) {
+                            System.out.println(challengesDaresRewards.getChallenges());
+                        } else if ((bx[i]==bx[4]&&by[i]==by[4])||(bx[i]==bx[9]&&by[i]==by[9])||(bx[i]==bx[13]&&by[i]==by[13])||(bx[i]==bx[18]&&by[i]==by[18])||(bx[i]==bx[25]&&by[i]==by[25])) {
+                            System.out.println(challengesDaresRewards.getRewards());
+                        } else if (bx[i]==bx[7]&&by[i]==by[7]) {
+                            System.out.println(challengesDaresRewards.getZuka());
+                        } else if (bx[i]==bx[14]&&by[i]==by[14]) {
+                            System.out.println(challengesDaresRewards.getMic());
+                        } else if (bx[i]==bx[21]&&by[i]==by[21]) {
+                            System.out.println(challengesDaresRewards.getMariana());
+                        }
+                    }
+                }
+
             }
         });
     }

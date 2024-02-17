@@ -28,9 +28,9 @@ public class ChallengesDaresRewards {
     private String[] rewards = {
        "Escolhe alguém para beber",
        "Tens Um passe podes passar um desafio",
-       "Tens um Não podes dizer não a um penalty",
+       "Podes dizer não a um penalty",
        "Podes lançar o dado novamente",
-       "Escolhe alguém para receber um desafio",
+       "Escolhe duas pessoas para beberem",
        "Cria um desafio para alguém(não podes recuar casas)"
     };
 

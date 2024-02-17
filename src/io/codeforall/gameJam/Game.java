@@ -35,5 +35,7 @@ public class Game {
         }
         player.turnOf();
     }
-
+    public Player getPlayer(){
+        return player;
+    }
 }
