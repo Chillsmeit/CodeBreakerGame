@@ -13,8 +13,8 @@ public class Dado implements MouseHandler {
     private final ExecutorService executorService;
     private Picture dado;
     private Game game = new Game();
-    int col = 300;
-    int row = 300;
+    int col = 322;
+    int row = 470;
 
     public Dado(String pathToImage) {
         dado = new Picture(col, row, pathToImage);
