@@ -7,8 +7,6 @@ public class Main {
         Background background = new Background(10, 10, Utilities.PREFIX+"board.png");
         background.drawBackground();
 
-        //Game game = new Game();
-
         Dado dado = new Dado(Utilities.PREFIX + "Dice1TOP.png");
         dado.drawDado();
 

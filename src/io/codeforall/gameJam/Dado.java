@@ -13,8 +13,8 @@ public class Dado implements MouseHandler {
     private final ExecutorService executorService;
     private Picture dado;
     private Game game = new Game();
-    int col = 300;
-    int row = 300;
+    int col = 155;
+    int row = 485;
 
     public Dado(String pathToImage) {
         dado = new Picture(col, row, pathToImage);
@@ -44,6 +44,18 @@ public class Dado implements MouseHandler {
                     mouseEvent.getY() <= dado.getY() + dado.getHeight()) {
                 int numRandom = (int) Math.ceil(Math.random() * 6);
                 System.out.println(numRandom);
+
+                if (numRandom == 2) {
+                    dado.load("resources/Dice2TOP.png");
+                } else if (numRandom == 3) {
+                    dado.load("resources/Dice3TOP.png");
+                } else if (numRandom == 4)  {
+                    dado.load("resources/Dice4TOP.png");
+                } else if (numRandom == 5) {
+                    dado.load("resources/Dice5TOP.png");
+                } else if (numRandom == 6) {
+                    dado.load("resources/Dice6TOP.png");
+                }
 
                 game.movePlayer(numRandom);
             }

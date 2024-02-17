@@ -55,16 +55,6 @@ public class Player {
         if (moveCounter >= 7 && moveCounter < 14){
                 moveUp();
 
-                if (moveCounter == 8 || moveCounter == 11) {
-                    message = challengesDaresRewards.getChallenges();
-                } else if (moveCounter == 9 || moveCounter == 13) {
-                    message = challengesDaresRewards.getRewards();
-                } else if (moveCounter == 10 || moveCounter == 12){
-                    message = challengesDaresRewards.getPenalties();
-                } else if (moveCounter == 7) {
-                    message = challengesDaresRewards.getZuka();
-                }
-
         } else if (moveCounter >= 14 && moveCounter < 21) {
                 moveRight();
 
