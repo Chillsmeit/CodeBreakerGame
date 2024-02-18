@@ -9,8 +9,6 @@ public class Player {
     private boolean turn;
     private int moveCounter;
 
-    Picture winScreen;
-
     private boolean isWin = false;
     private ChallengesDaresRewards challengesDaresRewards = new ChallengesDaresRewards();
 

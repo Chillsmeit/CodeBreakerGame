@@ -10,10 +10,6 @@ public class Background {
 
     public static int tileSize=(int)(originalTileSize*scale);
 
-    static public final int maxScreenCol=24;
-
-    static public final int maxScreenRow=18;
-
     private Picture background;
 
     public Background(int cols, int rows, String pathToImage) {
