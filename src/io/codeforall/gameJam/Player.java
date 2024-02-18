@@ -60,11 +60,6 @@ public class Player {
         }
     }
 
-
-    public void refreshImage() {
-        player.load(Utilities.PREFIX + "pawn.png");
-    }
-
     public boolean yourTurn() {
         return turn = true;
     }
