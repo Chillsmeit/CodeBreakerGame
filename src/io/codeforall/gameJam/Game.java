@@ -23,7 +23,7 @@ public class Game implements MouseHandler {
     private Picture addPlayers;
     private int playerCount = 1;
 
-    private int whoIsPlaying = 1;
+    private int whoIsPlaying = 0;
 
     private boolean hasStarted = false;
     private Text text = new Text(950, 100, "");
@@ -47,6 +47,7 @@ public class Game implements MouseHandler {
     public void movePlayer(int numSteps) {
         setHasStarted();
         setTurns();
+        whoIsPlaying++;
         if (getPlayer().isTurn()) {
             Runnable runnable;
             executorService.execute(() -> {
@@ -61,7 +62,7 @@ public class Game implements MouseHandler {
                 throw new RuntimeException(e);
             }
         }
-        whoIsPlaying++;
+
     }
 
     public void addPlayer() {
@@ -97,7 +98,7 @@ public class Game implements MouseHandler {
         if (playerCount == 1) {
             player.yourTurn();
             if (whoIsPlaying > 1) {
-                whoIsPlaying = 1;
+                whoIsPlaying = 0;
             }
         } else if (playerCount == 2) {
             if (whoIsPlaying == 1) {
@@ -109,7 +110,7 @@ public class Game implements MouseHandler {
                 text.delete();
                 text.setText(getNamePlayer1());
                 text.draw();
-                whoIsPlaying = 1;
+                whoIsPlaying = 0;
             }
         } else if (playerCount == 3) {
             if (whoIsPlaying == 1) {
@@ -133,7 +134,7 @@ public class Game implements MouseHandler {
                 text.delete();
                 text.setText(getNamePlayer2());
                 text.draw();
-                whoIsPlaying = 1;
+                whoIsPlaying = 0;
             }
         } else if (playerCount == 4) {
             if (whoIsPlaying == 1) {
@@ -168,7 +169,7 @@ public class Game implements MouseHandler {
                 text.delete();
                 text.setText(getNamePlayer3());
                 text.draw();
-                whoIsPlaying = 1;
+                whoIsPlaying = 0;
             }
         }
     }

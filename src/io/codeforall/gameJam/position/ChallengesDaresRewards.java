@@ -3,7 +3,7 @@ public class ChallengesDaresRewards {
     private String[] challenges = {
       "Diz algo que ninguém sabe sobre ti",
       "Dá um beijo na cabeça do careca mais próximo",
-      "Faz uma moeda ressaltar de uma mesa para dentro de um copo",
+      "Faz uma moeda ressaltar de uma mes para dentro de um copo",
       "Faz a coisa mais atletica que consegues, todos os participantes votam yes or no se tiveres mais no's bebe um copo",
       "Tens 30 segundos para falar algo com a boca cheia de água ou cerveja, se não perceberem engole e bebe mais um copo",
       "Escolhe alguém para criar um aperto de mão secreto contigo, se não conseguirem bebam os dois",
@@ -11,7 +11,7 @@ public class ChallengesDaresRewards {
       "Todo mundo diz algo de que se arrepende de ter feito, quem tem a pior história bebe um copo",
       "Dança por cima de uma mesa senão bebe um copo",
       "Diz uma frase famosa de um filme se não adivinharem o filme bebe um copo",
-      "Mimica se não descobrirem a tua mimica todos bebem um copo"
+      "Mimica se não descobrirem a tua mímica todos bebem um copo"
     };
     private String[] penalties = {
        "Não podes fugir, bebe um copo",
@@ -31,7 +31,7 @@ public class ChallengesDaresRewards {
        "Podes dizer não a um penalty",
        "Podes lançar o dado novamente",
        "Escolhe duas pessoas para beberem",
-       "Cria um desafio para alguém(não podes recuar casas)"
+       "Cria um desafio para alguém (não podes recuar casas)"
     };
 
     private String zuka = "Dança a Lapada Dela com o Zuka, se ele não tiver presente dança sozinho";
