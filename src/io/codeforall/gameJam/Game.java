@@ -110,6 +110,9 @@ public class Game implements MouseHandler {
                 text.setText(getNamePlayer());
                 text.draw();
                 player1.notTurn();
+                text.delete();
+                text.setText(getNamePlayer());
+                text.draw();
             } else if (whoIsPlaying == 2) {
                 player.notTurn();
                 player1.yourTurn();
