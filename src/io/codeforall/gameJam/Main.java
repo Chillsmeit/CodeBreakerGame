@@ -1,9 +1,15 @@
 package io.codeforall.gameJam;
 
+import org.academiadecodigo.simplegraphics.graphics.Color;
+import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+
 public class Main {
 
     public static void main(String[] args) {
 
+        Rectangle background1 = new Rectangle(10,10,1500,750);
+        background1.setColor(new Color(47,130,108) );
+        background1.fill();
         Background background = new Background(10, 10, Utilities.PREFIX+"board.png");
         background.drawBackground();
 
