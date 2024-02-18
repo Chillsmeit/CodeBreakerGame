@@ -16,7 +16,6 @@ public class Dado implements MouseHandler {
     private final ExecutorService executorService;
     private Picture dado;
     private Game game = new Game();
-
     private BoardPositions boardPositions = new BoardPositions();
     private ChallengesDaresRewards challengesDaresRewards = new ChallengesDaresRewards();
     private Text text = new Text(800, 180, "");
@@ -56,17 +55,17 @@ public class Dado implements MouseHandler {
                 System.out.println(numRandom);
 
                 if (numRandom == 1) {
-                    dado.load("resources/Dice1TOP.png");
+                    dado.load( Utilities.PREFIX + "Dice1TOP.png");
                 } else if (numRandom == 2) {
-                    dado.load("resources/Dice2TOP.png");
+                    dado.load( Utilities.PREFIX + "Dice2TOP.png");
                 } else if (numRandom == 3)  {
-                    dado.load("resources/Dice3TOP.png");
+                    dado.load(Utilities.PREFIX + "Dice3TOP.png");
                 } else if (numRandom == 4) {
-                    dado.load("resources/Dice4TOP.png");
+                    dado.load(Utilities.PREFIX + "Dice4TOP.png");
                 } else if (numRandom == 5) {
-                    dado.load("resources/Dice5TOP.png");
+                    dado.load( Utilities.PREFIX + "Dice5TOP.png");
                 } else {
-                    dado.load("resources/Dice6TOP.png");
+                    dado.load(Utilities.PREFIX + "Dice6TOP.png");
                 }
 
                 game.movePlayer(numRandom);

@@ -4,8 +4,8 @@ public class ChallengesDaresRewards {
       "Diz algo que ninguém sabe sobre ti",
       "Dá um beijo na cabeça do careca mais próximo",
       "Faz uma moeda ressaltar de uma mes para dentro de um copo",
-      "Faz a coisa mais atletica que consegues, todos os participantes votam yes or no se tiveres mais no's bebe um copo",
-      "Tens 30 segundos para falar algo com a boca cheia de água ou cerveja, se não perceberem engole e bebe mais um copo",
+      "Faz a coisa mais atletica que consegues, todos os participantes votam tiveres menos bebe um copo",
+      "Tens 30 segundos para falar com a boca cheia de água ou cerveja, se não perceberem bebe mais um copo",
       "Escolhe alguém para criar um aperto de mão secreto contigo, se não conseguirem bebam os dois",
       "recita um poema senão bebe um copo",
       "Todo mundo diz algo de que se arrepende de ter feito, quem tem a pior história bebe um copo",
@@ -36,7 +36,7 @@ public class ChallengesDaresRewards {
 
     private String zuka = "Dança a Lapada Dela com o Zuka, se ele não tiver presente dança sozinho";
     private String mic = "Canta uma música da escolha do Mic, se ele não estiver presente canta uma da tua escolha";
-    private String mariana = "Durante as próximas cinco jogadas sempre que falares tens de dar um conselho senão bebe um copo";
+    private String mariana = "Durante as próximas cinco jogadas sempre que falares dá um conselho senão bebe um copo";
 
     public String getRewards() {
         return rewards[(int)(Math.random()*(rewards.length-1))];

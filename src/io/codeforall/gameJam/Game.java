@@ -26,16 +26,18 @@ public class Game implements MouseHandler {
     private int whoIsPlaying = 0;
 
     private boolean hasStarted = false;
+
+    private boolean isWin = false;
     private Text text = new Text(950, 100, "");
 
     public Game() {
         executorService = Executors.newFixedThreadPool(2);
-        player = new Player(635, 620, Utilities.PREFIX + "player.png", "Fred");
+        player = new Player(630, 620, Utilities.PREFIX + "PlayerBlue.png", "Player 1");
         text.setText(getNamePlayer());
         text.grow(50, 50);
         text.draw();
         init();
-        addPlayers = new Picture(650, 635, Utilities.PREFIX + "pawn_up.png");
+        addPlayers = new Picture(250, 700, Utilities.PREFIX + "AddPlayer.png");
         drawAddPlayers();
     }
 
@@ -62,28 +64,30 @@ public class Game implements MouseHandler {
                 throw new RuntimeException(e);
             }
         }
-
+        if (getPlayer().getPlayerPicture().getX()==635&&getPlayer().getPlayerPicture().getY()==620){
+            setWin();
+        }
     }
 
     public void addPlayer() {
         executorService.execute(() -> {
             if (!hasStarted) {
                 if (playerCount == 1) {
-                    player1 = new Player(635, 620, Utilities.PREFIX + "player.png", "Bernardo");
+                    player1 = new Player(630, 620, Utilities.PREFIX + "PlayerGold.png", "Player 2");
                     text.delete();
                     text.setText(getNamePlayer1());
                     text.draw();
                     player1.drawPlayer();
                     playerCount++;
                 } else if (playerCount == 2) {
-                    player2 = new Player(635, 620, Utilities.PREFIX + "player.png", "Alex");
+                    player2 = new Player(630, 620, Utilities.PREFIX + "PlayerGreen.png", "Player 3");
                     text.delete();
                     text.setText(getNamePlayer2());
                     text.draw();
                     player2.drawPlayer();
                     playerCount++;
                 } else if (playerCount == 3) {
-                    player3 = new Player(635, 620, Utilities.PREFIX + "player.png", "Ruben");
+                    player3 = new Player(630, 620, Utilities.PREFIX + "PlayerWhite.png", "Player 4");
                     text.delete();
                     text.setText(getNamePlayer3());
                     text.draw();
@@ -245,5 +249,13 @@ public class Game implements MouseHandler {
 
     public void setHasStarted() {
         hasStarted = true;
+    }
+
+    public boolean isWin() {
+        return isWin;
+    }
+
+    public void setWin(){
+        isWin = true;
     }
 }
