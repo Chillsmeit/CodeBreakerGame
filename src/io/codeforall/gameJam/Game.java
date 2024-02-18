@@ -46,6 +46,9 @@ public class Game implements MouseHandler {
     }
 
     public void movePlayer(int numSteps) {
+        if (player.isWin()|| player1.isWin()||player2.isWin()|| player3.isWin()){
+            return;
+        }
         setHasStarted();
         setTurns();
         whoIsPlaying++;
