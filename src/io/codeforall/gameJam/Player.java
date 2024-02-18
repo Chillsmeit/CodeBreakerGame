@@ -1,6 +1,8 @@
 package io.codeforall.gameJam;
 
 import io.codeforall.gameJam.position.ChallengesDaresRewards;
+import org.academiadecodigo.simplegraphics.graphics.Color;
+import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Player {
@@ -62,7 +64,7 @@ public class Player {
 
 
     public void refreshImage() {
-        player.load(Utilities.PREFIX + "pawn.png");
+        player.load(Utilities.PREFIX + "PlayerBlue.png");
     }
 
     public boolean yourTurn() {
