@@ -20,7 +20,7 @@ public class ChallengesDaresRewards {
        "Bebe o número de copos que calhou nos dados, good luck",
        "Walk the dog ou carrinho de mão humano, 20 passos",
        "Não digas nada por duas Jogadas senão bebes dois copos",
-       "Equilibra um copo (the plástico plz) cheio por cima de tua cabeça por 1 minuto",
+       "Equilibra um copo (de plástico plz) cheio por cima de tua cabeça por 1 minuto",
        "Equilibra-te em uma perna por 5 jogadas",
        "Todos bebem, agradeçam ao jogador que caiu nesta casa",
        "Bebe um copo e escolhe dois jogadores para beberem também"
