@@ -31,7 +31,7 @@ public class Game implements MouseHandler {
 
     public Game() {
         executorService = Executors.newFixedThreadPool(2);
-        player = new Player(630, 620, Utilities.PREFIX + "PlayerBlue.png", "Fred");
+        player = new Player(630, 620, Utilities.PREFIX + "PlayerBlue.png", "Player Blue");
         text.setText(getNamePlayer());
         text.grow(50, 50);
         text.draw();
@@ -94,21 +94,21 @@ public class Game implements MouseHandler {
         executorService.execute(() -> {
             if (!hasStarted) {
                 if (playerCount == 1) {
-                    player1 = new Player(630, 620, Utilities.PREFIX + "PlayerGold.png", "Bernardo");
+                    player1 = new Player(630, 620, Utilities.PREFIX + "PlayerGold.png", "Player Gold");
                     text.delete();
                     text.setText(getNamePlayer1());
                     text.draw();
                     player1.drawPlayer();
                     playerCount++;
                 } else if (playerCount == 2) {
-                    player2 = new Player(630, 620, Utilities.PREFIX + "PlayerGreen.png", "Alex");
+                    player2 = new Player(630, 620, Utilities.PREFIX + "PlayerGreen.png", "Player Green");
                     text.delete();
                     text.setText(getNamePlayer2());
                     text.draw();
                     player2.drawPlayer();
                     playerCount++;
                 } else if (playerCount == 3) {
-                    player3 = new Player(630, 620, Utilities.PREFIX + "PlayerWhite.png", "Rúben");
+                    player3 = new Player(630, 620, Utilities.PREFIX + "PlayerWhite.png", "Player White");
                     text.delete();
                     text.setText(getNamePlayer3());
                     text.draw();
