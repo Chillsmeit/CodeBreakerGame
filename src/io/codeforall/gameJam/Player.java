@@ -8,6 +8,10 @@ public class Player {
     private String name;
     private boolean turn;
     private int moveCounter;
+
+    Picture winScreen;
+
+    private boolean isWin = false;
     private ChallengesDaresRewards challengesDaresRewards = new ChallengesDaresRewards();
 
     public int getMoveCounter() {
@@ -78,4 +82,13 @@ public class Player {
     public boolean isTurn() {
         return turn;
     }
+
+    public boolean isWin() {
+        return isWin;
+    }
+
+    public void setWin(){
+        isWin = true;
+    }
+
 }

@@ -27,7 +27,6 @@ public class Game implements MouseHandler {
 
     private boolean hasStarted = false;
 
-    private boolean isWin = false;
     private Text text = new Text(950, 100, "");
 
     public Game() {
@@ -64,8 +63,21 @@ public class Game implements MouseHandler {
                 throw new RuntimeException(e);
             }
         }
-        if (getPlayer().getPlayerPicture().getX()==635&&getPlayer().getPlayerPicture().getY()==620){
-            setWin();
+        if (getPlayer().getPlayerPicture().getX()==630&&getPlayer().getPlayerPicture().getY()==620){
+            getPlayer().setWin();
+            if(player.isWin()) {
+                Picture winscreen = new Picture(10,10,Utilities.PREFIX+"WinScreen-blue-player-alt.png");
+                winscreen.draw();
+            } else if (player1.isWin()) {
+                Picture winscreen = new Picture(10,10,Utilities.PREFIX+"WinScreen-gold-player-alt.png");
+                winscreen.draw();
+            } else if (player2.isWin()) {
+                Picture winscreen = new Picture(10,10,Utilities.PREFIX+"WinScreen-green-player-alt.png");
+                winscreen.draw();
+            } else if (player3.isWin()) {
+                Picture winscreen = new Picture(10,10,Utilities.PREFIX+"WinScreen-white-player-alt.png");
+                winscreen.draw();
+            }
         }
     }
 
@@ -251,11 +263,4 @@ public class Game implements MouseHandler {
         hasStarted = true;
     }
 
-    public boolean isWin() {
-        return isWin;
-    }
-
-    public void setWin(){
-        isWin = true;
-    }
 }
