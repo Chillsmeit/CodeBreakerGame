@@ -75,7 +75,7 @@ public class Player {
         return turn = true;
     }
 
-    public void turnOf() {
+    public void notTurn() {
         turn = false;
     }
 
@@ -84,5 +84,9 @@ public class Player {
     }
     public Picture getPlayerPicture(){
         return player;
+    }
+
+    public boolean isTurn() {
+        return turn;
     }
 }
