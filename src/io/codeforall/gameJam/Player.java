@@ -23,9 +23,6 @@ public class Player {
 
     public Player(int col, int row, String pathToImage, String name) {
         player = new Picture(col, row, pathToImage);
-        //Text text = new Text(1000, 100, name);
-        //text.grow(50, 50);
-        //text.draw();
         this.name = name;
     }
     public void drawPlayer(){

@@ -19,7 +19,7 @@ public class Dado implements MouseHandler {
 
     private BoardPositions boardPositions = new BoardPositions();
     private ChallengesDaresRewards challengesDaresRewards = new ChallengesDaresRewards();
-    private Text text = new Text(1000, 200, "");
+    private Text text = new Text(800, 180, "");
 
     int col = 322;
     int row = 470;
@@ -28,6 +28,7 @@ public class Dado implements MouseHandler {
     public Dado(String pathToImage) {
         dado = new Picture(col, row, pathToImage);
         executorService = Executors.newFixedThreadPool(1);
+        text.grow(10, 10);
     }
 
     public void drawDado() {
@@ -76,7 +77,6 @@ public class Dado implements MouseHandler {
                         if ((bx[i]==bx[1]&&by[i]==by[1])||(bx[i]==bx[3]&&by[i]==by[3])||(bx[i]==bx[6]&&by[i]==by[6])||(bx[i]==bx[10]&&by[i]==by[10])||(bx[i]==bx[12]&&by[i]==by[12])||(bx[i]==bx[15]&&by[i]==by[15])||(bx[i]==bx[17]&&by[i]==by[17])||(bx[i]==bx[19]&&by[i]==by[19])||(bx[i]==bx[22]&&by[i]==by[22])||(bx[i]==bx[24]&&by[i]==by[24])||(bx[i]==bx[27]&&by[i]==by[27])){
                             String penaltis = challengesDaresRewards.getPenalties();
                             text.setText(penaltis);
-                            text.grow(20, 20);
                             text.draw();
                         } else if ((bx[i]==bx[2]&&by[i]==by[2])||(bx[i]==bx[5]&&by[i]==by[5])||(bx[i]==bx[8]&&by[i]==by[8])||(bx[i]==bx[11]&&by[i]==by[11])||(bx[i]==bx[16]&&by[i]==by[16])||(bx[i]==bx[20]&&by[i]==by[20])||(bx[i]==bx[23]&&by[i]==by[23])||(bx[i]==bx[26]&&by[i]==by[26])) {
                             String challenges = challengesDaresRewards.getChallenges();

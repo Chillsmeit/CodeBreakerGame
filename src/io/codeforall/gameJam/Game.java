@@ -26,11 +26,11 @@ public class Game implements MouseHandler {
     private int whoIsPlaying = 1;
 
     private boolean hasStarted = false;
-    private Text text = new Text(1000, 100, "");
+    private Text text = new Text(950, 100, "");
 
     public Game() {
         executorService = Executors.newFixedThreadPool(2);
-        player = new Player(635, 620, Utilities.PREFIX + "player.png", "Frederico");
+        player = new Player(635, 620, Utilities.PREFIX + "player.png", "Fred");
         text.setText(getNamePlayer());
         text.grow(50, 50);
         text.draw();
