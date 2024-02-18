@@ -10,13 +10,6 @@ public class Main {
         Dado dado = new Dado(Utilities.PREFIX + "Dice1TOP.png");
         dado.drawDado();
 
-
-        //Player player = new Player(800, 800,Utilities.PREFIX +"pawn.png");
-        //player.drawPlayer();
-
-        //Dado dado = new Dado(Utilities.PREFIX + "dice_1.png");
-        //dado.drawDado();
-
     }
 
 

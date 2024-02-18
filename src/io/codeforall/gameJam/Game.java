@@ -1,5 +1,6 @@
 package io.codeforall.gameJam;
 
+import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.simplegraphics.mouse.Mouse;
 import org.academiadecodigo.simplegraphics.mouse.MouseEvent;
 import org.academiadecodigo.simplegraphics.mouse.MouseEventType;
@@ -25,12 +26,16 @@ public class Game implements MouseHandler {
     private int whoIsPlaying = 1;
 
     private boolean hasStarted = false;
+    private Text text = new Text(1000, 100, "");
 
     public Game() {
         executorService = Executors.newFixedThreadPool(2);
-        player = new Player(635, 620, Utilities.PREFIX + "player.png", "ZUKA");
+        player = new Player(635, 620, Utilities.PREFIX + "player.png", "Frederico");
+        text.setText(getNamePlayer());
+        text.grow(50, 50);
+        text.draw();
         init();
-        addPlayers = new Picture(650,635,Utilities.PREFIX+ "pawn_up.png");
+        addPlayers = new Picture(650, 635, Utilities.PREFIX + "pawn_up.png");
         drawAddPlayers();
     }
 
@@ -58,29 +63,36 @@ public class Game implements MouseHandler {
         }
         whoIsPlaying++;
     }
-    public void addPlayer(){
+
+    public void addPlayer() {
         executorService.execute(() -> {
-      if(hasStarted==false) {
-          if (playerCount == 1) {
-              player1 = new Player(635, 620, Utilities.PREFIX + "player.png", "ricardo");
-              player1.drawPlayer();
-              playerCount++;
-          } else if (playerCount == 2) {
-              player2 = new Player(635, 620, Utilities.PREFIX + "player.png", "edd");
-              player2.drawPlayer();
-              playerCount++;
-          } else if (playerCount == 3) {
-              player3 = new Player(635, 620, Utilities.PREFIX + "player.png", "ruben");
-              player3.drawPlayer();
-              playerCount++;
-          } else if (playerCount == 4) {
-              return;
-          }
-      } else {
-          return;
-      }
+            if (!hasStarted) {
+                if (playerCount == 1) {
+                    player1 = new Player(635, 620, Utilities.PREFIX + "player.png", "Bernardo");
+                    text.delete();
+                    text.setText(getNamePlayer1());
+                    text.draw();
+                    player1.drawPlayer();
+                    playerCount++;
+                } else if (playerCount == 2) {
+                    player2 = new Player(635, 620, Utilities.PREFIX + "player.png", "Alex");
+                    text.delete();
+                    text.setText(getNamePlayer2());
+                    text.draw();
+                    player2.drawPlayer();
+                    playerCount++;
+                } else if (playerCount == 3) {
+                    player3 = new Player(635, 620, Utilities.PREFIX + "player.png", "Ruben");
+                    text.delete();
+                    text.setText(getNamePlayer3());
+                    text.draw();
+                    player3.drawPlayer();
+                    playerCount++;
+                }
+            }
         });
     }
+
     public void setTurns() {
         if (playerCount == 1) {
             player.yourTurn();
@@ -94,48 +106,73 @@ public class Game implements MouseHandler {
             } else if (whoIsPlaying == 2) {
                 player.notTurn();
                 player1.yourTurn();
+                text.delete();
+                text.setText(getNamePlayer1());
+                text.draw();
                 whoIsPlaying = 1;
             }
         } else if (playerCount == 3) {
             if (whoIsPlaying == 1) {
                 player.yourTurn();
+                text.delete();
+                text.setText(getNamePlayer());
+                text.draw();
                 player1.notTurn();
                 player2.notTurn();
             } else if (whoIsPlaying == 2) {
                 player.notTurn();
                 player1.yourTurn();
+                text.delete();
+                text.setText(getNamePlayer1());
+                text.draw();
                 player2.notTurn();
             } else if (whoIsPlaying == 3) {
                 player.notTurn();
                 player1.notTurn();
                 player2.yourTurn();
+                text.delete();
+                text.setText(getNamePlayer2());
+                text.draw();
                 whoIsPlaying = 1;
             }
         } else if (playerCount == 4) {
             if (whoIsPlaying == 1) {
                 player.yourTurn();
+                text.delete();
+                text.setText(getNamePlayer());
+                text.draw();
                 player1.notTurn();
                 player2.notTurn();
                 player3.notTurn();
             } else if (whoIsPlaying == 2) {
                 player.notTurn();
                 player1.yourTurn();
+                text.delete();
+                text.setText(getNamePlayer1());
+                text.draw();
                 player2.notTurn();
                 player3.notTurn();
             } else if (whoIsPlaying == 3) {
                 player.notTurn();
                 player1.notTurn();
                 player2.yourTurn();
+                text.delete();
+                text.setText(getNamePlayer2());
+                text.draw();
                 player3.notTurn();
             } else if (whoIsPlaying == 4) {
                 player.notTurn();
                 player1.notTurn();
                 player2.notTurn();
                 player3.yourTurn();
+                text.delete();
+                text.setText(getNamePlayer3());
+                text.draw();
                 whoIsPlaying = 1;
             }
         }
     }
+
     public Player getPlayer() {
         if (player.isTurn()) {
             return player;
@@ -149,31 +186,23 @@ public class Game implements MouseHandler {
         return null;
     }
 
-        public Player getPlayer1() {
-        return player1;
+    public String getNamePlayer() {
+        return player.getName();
     }
 
-    public void setPlayer1(Player player1) {
-        this.player1 = player1;
+    public String getNamePlayer1() {
+        return player1.getName();
     }
 
-    public Player getPlayer2() {
-        return player2;
+    public String getNamePlayer2() {
+        return player2.getName();
     }
 
-    public void setPlayer2(Player player2) {
-        this.player2 = player2;
+    public String getNamePlayer3() {
+        return player3.getName();
     }
 
-    public Player getPlayer3() {
-        return player3;
-    }
-
-    public void setPlayer3(Player player3) {
-        this.player3 = player3;
-    }
-
-    public void drawAddPlayers(){
+    public void drawAddPlayers() {
         addPlayers.draw();
         mouseSetup();
     }

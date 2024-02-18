@@ -1,8 +1,6 @@
 package io.codeforall.gameJam;
 
 import io.codeforall.gameJam.position.ChallengesDaresRewards;
-import org.academiadecodigo.simplegraphics.graphics.Color;
-import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Player {
@@ -25,11 +23,10 @@ public class Player {
 
     public Player(int col, int row, String pathToImage, String name) {
         player = new Picture(col, row, pathToImage);
+        //Text text = new Text(1000, 100, name);
+        //text.grow(50, 50);
+        //text.draw();
         this.name = name;
-        Text text = new Text(1000, 100, name);
-        text.setColor(Color.BLACK);
-        text.grow(50, 50);
-        text.draw();
     }
     public void drawPlayer(){
         player.draw();
